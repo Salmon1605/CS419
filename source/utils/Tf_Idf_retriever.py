@@ -43,7 +43,7 @@ class TfIDF:
         query_tf_idf = {} 
         terms_counter = Counter(processed_query)
         for term, tf in terms_counter.items(): 
-            term_tf_idf =  tf* self._calculate_idf(term) 
+            term_tf_idf =  tf * self._calculate_idf(term) 
             query_tf_idf.update({term:term_tf_idf})
         return query_tf_idf
     
