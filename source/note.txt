@@ -1,0 +1,17 @@
+INFORMATiON RETRIEVAL 
+
+1. BASELINE PIPELINE: 
+    1.1. Term Preprocessing 
+        - Lower Case 
+        - Remove punctuations 
+        - Remove stopwords 
+        - Tokenize 
+        - Remove Numeric Tokens 
+        - Lemmatize 
+
+    1.2. Build Terms-Docs Dictionary
+        - Build Vocab 
+        - Build Term-Docs 
+
+    1.3. Boolean Model
+        - 
