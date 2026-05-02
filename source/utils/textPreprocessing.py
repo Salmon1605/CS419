@@ -81,7 +81,7 @@ class TextPreprocessing:
         temp_df = dataframe.copy()
 
         temp_df["content"] = temp_df["content"].fillna("").astype(str)
-        temp_df["tokens"] = temp_df["content"].apply(self._text_preprocessing)
+        temp_df["tokens"] = temp_df["content"].apply(self._text_preprocessing).apply(tuple)
 
         self.temp_dataframe = temp_df
         return temp_df
