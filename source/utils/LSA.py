@@ -15,7 +15,7 @@ from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import word_tokenize
 from collections import Counter 
-from textPreprocessing import TextPreprocessing 
+from .textPreprocessing import TextPreprocessing 
 
 logging.basicConfig(format='%(asctime)s %(message)s')
 
@@ -82,6 +82,9 @@ class LSA:
         if self.doc_embeddings is None:
             self._fit_svd()
         return self.doc_embeddings
+    
+    def get_svd(self):
+        return self.SVD
 
     def search(self, query, top_k:int=10): 
         processed_query = self._process_query(query)

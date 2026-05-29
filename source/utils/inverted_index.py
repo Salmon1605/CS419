@@ -59,14 +59,14 @@ class InvertedIndex:
                     self.inverted_index[term]['df'] += 1
                     self.inverted_index[term]['postings'][doc_id] = tf
 
-            # Calculating average documents length
-            sum_docs_length = sum([v for _,v in self.document_lengths.items()])
-            total_docs = self.total_documents 
-            if total_docs == 0:
-                self.average_document_length = 0 
-            else: 
-                avgdl = sum_docs_length/total_docs 
-                self.average_document_length = avgdl
+        # Calculating average documents length
+        sum_docs_length = sum(self.document_lengths.values())
+        total_docs = self.total_documents 
+        if total_docs == 0:
+            self.average_document_length = 0 
+        else: 
+            avgdl = sum_docs_length/total_docs 
+            self.average_document_length = avgdl
 
     def get_total_documents(self): 
         return self.total_documents

@@ -22,6 +22,7 @@ class TextPreprocessing:
     def __init__(self):
         # self.dataframe = dataframe.copy()
         self.temp_dataframe = None
+        self.vocab = set() 
 
         self.stop_words = set(stopwords.words("english"))
         self.lemmatizer = WordNetLemmatizer()
@@ -91,8 +92,7 @@ class TextPreprocessing:
     # BUILD VOCAB
     # ---------------------------
     def get_vocab(self):
-        vocab = set()
         for tokens in self.temp_dataframe["tokens"]:
-            vocab.update(tokens)
+            self.vocab.update(tokens)
 
-        return sorted(vocab)
+        return sorted(self.vocab)
